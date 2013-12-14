@@ -11,7 +11,7 @@ class PrimeDisplayTest < Test::Unit::TestCase
   end
 
   def test_01_validate_prime_calculation
-    assert Prime.take(@size).map { |n| @primes.prime?( n ) }.all?
+    assert Prime.take(@size).map { |n| PrimeDisplay::PrimeGenerator.prime?( n ) }.all?
   end
   
   def test_02_validate_prime_lists
@@ -21,7 +21,5 @@ class PrimeDisplayTest < Test::Unit::TestCase
   def test_03_validate_max_value
     assert_equal( Prime.take(@size).last**2, @table.data.last.last )
   end
-  
-  
   
 end

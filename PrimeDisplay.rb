@@ -71,8 +71,13 @@ class PrimeDisplay
       
     end # initialize
     
-    # Test whether a number is prime
+    # Instance method from Class method
     def prime?( number )
+      self.class.prime? number
+    end
+    
+    # Test whether a number is prime
+    def self.prime?( number )
     
       # Catch invalid input
       raise ArgumentError, 'Prime must be an Integer' unless Fixnum === number
