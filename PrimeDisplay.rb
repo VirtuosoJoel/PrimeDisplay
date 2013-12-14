@@ -74,7 +74,7 @@ class PrimeDisplay
     # Instance method from Class method
     def prime?( number )
       self.class.prime? number
-    end
+    end # prime?
     
     # Test whether a number is prime
     def self.prime?( number )
@@ -87,12 +87,12 @@ class PrimeDisplay
       return false if number.even? || number == 1
       
       # Brute-force calulation
-      ( 3..( Math.sqrt( number ).ceil ) ).each { |n| return false if ( number % n ).zero? }
+      ( 3..( Math.sqrt( number ).ceil ) ).step(2) { |n| return false if ( number % n ).zero? }
       
       # If no previous returns triggered, it's a prime
       true
       
-    end # prime?
+    end # self.prime?
     
   end # PrimeGenerator
   
